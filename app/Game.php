@@ -11,7 +11,7 @@ class Game extends Model
         'url'
     ];
 
-    protected $fillable = ['name', 'created_user_id'];
+    protected $fillable = ['name', 'created_user_id', 'igdb_id', 'description', 'image'];
 
     public function getUrlAttribute()
     {

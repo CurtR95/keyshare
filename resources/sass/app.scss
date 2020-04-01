@@ -1,12 +1,9 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
 //Page
 body {
     font-family: "Open Sans", sans-serif;
@@ -25,27 +22,25 @@ body {
 //Games Grid
 .gamegrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(17rem, auto));
+    grid-template-columns: repeat(auto-fill, minmax(14rem, auto));
     grid-gap: 1rem;
     margin: auto;
-
     .gamecard {
         position: relative;
         width: 100%;
-        max-width: 460px;
+        max-width: 264px;
+        max-height: 374px;
+        background-color: black;
     }
-
     .gamecard:hover .overlay {
         opacity: 1;
     }
-
     .image {
         display: block;
         width: 100%;
         border-radius: 2px;
         border: 1px solid grey;
     }
-
     .overlay {
         position: absolute;
         bottom: 0;
@@ -60,7 +55,6 @@ body {
         font-size: 1.5rem;
         text-align: center;
         height: 3rem;
-
         a {
             color: white;
         }
@@ -75,7 +69,6 @@ body {
 //AutoComplete Component
 .autocomplete {
     position: relative;
-
     .autocomplete-results {
         padding: 0;
         margin: 0;
@@ -86,7 +79,6 @@ body {
         position: absolute;
         z-index: 2000;
         width: 100%;
-
         .autocomplete-result {
             list-style: none;
             text-align: left;
@@ -94,7 +86,6 @@ body {
             cursor: pointer;
             margin-top: 2px;
         }
-
         .autocomplete-result.is-active,
         .autocomplete-result:hover {
             background-color: $accent;
@@ -114,38 +105,30 @@ body {
     border-bottom: 2px solid $accent;
     padding: 0.1rem 1rem;
     color: $accent !important;
-
     .dropdown-menu {
         border-radius: $border-radius;
         border-color: $main-border;
         padding: 0rem 0rem;
-
         .dropdown-item:hover {
             background-color: $accent;
         }
-
         .dropdown-divider {
             border-top: 1px solid $main-border;
             margin: 0 0;
         }
     }
-
     .navbar-brand {
         color: #f1f1f1 !important;
         padding-right: 1rem;
     }
-
-
     .nav-link {
         padding-right: .75rem !important;
         padding-left: .75rem !important;
     }
-
     .nav-link:hover {
         color: #f1f1f1 !important;
         background-color: lighten($main, 15%);
     }
-
     .navbar-search {
         width: 20rem;
         background-color: lighten($main, 15%);
@@ -183,7 +166,6 @@ body {
     -ms-word-break: break-all;
     word-break: break-all;
     word-break: break-word;
-
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;

@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     infiniteHandler($state) {
-      axios.get(this.url + "?page=" + this.page).then(response => {
+      axios.get(this.url + "page=" + this.page).then(response => {
         this.lastpage = response.data.last_page;
         if (this.lastpage >= this.page) {
           this.games = this.games.concat(response.data.data);

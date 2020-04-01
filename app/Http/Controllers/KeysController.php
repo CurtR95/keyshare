@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use App\Dlc;
 use Auth;
+use MarcReichel\IGDBLaravel\Models\Game as IGDB_Game;
 
 class KeysController extends Controller
 {
@@ -46,10 +47,20 @@ class KeysController extends Controller
 
 
         if ($request->key_type == '1' or $request->key_type == '2') {
-            $game = Game::firstOrCreate(
-                ['name' => $request->gamename],
-                ['created_user_id' => $key->created_user_id]
-            );
+            $igdb = IGDB_Game::select('name, summary, cover')->with(['cover' => ['image_id']])->where('name', $request->gamename)->first();
+            
+
+            if ($igdb) {
+                $game = Game::updateOrCreate(
+                    ['name' => $request->gamename],
+                    [
+                        'igdb_id' => $igdb->id,
+                        'description' => $igdb->summary,
+                        'image' => 'https://images.igdb.com/igdb/image/upload/t_cover_big/' . $igdb->cover->image_id . '.jpg',
+                        'created_user_id' => $key->created_user_id,
+                    ]
+                );
+            }
 
             $key->game_id = $game->id;
         }

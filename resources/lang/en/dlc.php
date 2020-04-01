@@ -16,7 +16,7 @@ return [
     'editdlc' => 'Edit Dlc',
     'edit' => 'Edit',
     'image' => 'Image',
-    'imagereqs' => 'Must be 460x216px',
+    'imagereqs' => 'Must be 264x374px',
     'name' => 'Name',
     'description' => 'Description',
     'dlcupdated ' => 'DLC Updated',

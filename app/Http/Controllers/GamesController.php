@@ -65,7 +65,7 @@ class GamesController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'image' => 'image|nullable|max:1999|dimensions:width=460,height=215'
+            'image' => 'image|nullable|max:1999|dimensions:width=264,height=374'
         ]);
 
         if ($request->hasFile('image')) {

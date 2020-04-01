@@ -1,13 +1,13 @@
 <template>
   <div>
-    <label for="Key Type">Key Type:</label>
+    <!-- <label for="Key Type">Key Type:</label>
     <br />
     <input type="radio" id="Game" value="Game" v-model="KeyType" selected />
     <label for="Game">Game</label>
     <br />
     <input type="radio" id="DLC" value="DLC" v-model="KeyType" />
     <label for="DLC">DLC</label>
-    <br />
+    <br /> -->
     <!-- <input type="radio" id="Wallet" value="Wallet" v-model="KeyType" />
     <label for="Wallet">Wallet</label>
     <br />
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       platforms: [],
-      KeyType: ""
+      KeyType: "Game"
     };
   },
   methods: {},
