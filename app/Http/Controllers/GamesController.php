@@ -82,7 +82,7 @@ class GamesController extends Controller
         $game->name = $request->name;
         $game->description = $request->description;
         if ($request->hasFile('image')) {
-            $game->image = 'storage/' . $fullImagePath;
+            $game->image = '../storage/' . $fullImagePath;
         }
         $game->save();
 
