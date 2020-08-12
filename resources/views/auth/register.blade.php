@@ -54,6 +54,11 @@
 
                     <a class="btn btn-link" href="{{ route('login') }}">Login</a>
                 </div>
+
+                {!! htmlScriptTagJsApi([
+                    'action' => 'homepage',
+                    'custom_validation' => 'myCustomValidation'
+                ]) !!}
             </div>
         </form>
     </div>

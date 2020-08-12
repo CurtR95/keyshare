@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     container_name: keyshare-web
     ports:
-     - "3472:80"
+     - "3471:80"
     environment:
      APP_NAME: KeyshareDemo
      TELESCOPE_ENABLED: "false"
@@ -19,8 +19,11 @@ services:
      ASSET_URL: https://360nohope.co.uk
      REDIRECT_HTTPS: 'false'
      APP_DEBUG: 'true'
-     APP_DEMO_MODE: 'true'
+     APP_DEMO_MODE: 'false'
      APP_ENV: local
+     RECAPTCHA_ENABLED: 'true'
+     RECAPTCHA_SITE_KEY: '6LdE570ZAAAAAPk5Wv6rMqmEOief9sf_Frd-4Nog'
+     RECAPTCHA_SECRET_KEY: '6LdE570ZAAAAABvBUWC3u8XNLkYjyc2vq0Wyhn-1'
     volumes:
       - .:/app
     depends_on:
